@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio di Psicologia e Psicoterapia | Dott.ssa Antonella Arancio - Tortona</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3B7A65;
+            --primary-light: #E2EDE7;
+            --accent: #5CA488;
+            --bg-color: #F4F8F6;
+            --text-main: #1F332B;
+            --text-muted: #4A6359;
+            --white: #FFFFFF;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(59, 122, 101, 0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-nav {
+            background-color: var(--accent);
+            color: var(--white) !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(59, 122, 101, 0.25);
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: var(--accent);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--primary);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-light);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(59, 122, 101, 0.15);
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* CHI SONO & STUDIO */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .studio-image-container img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(59, 122, 101, 0.1);
+        }
+
+        .cv-box {
+            background-color: var(--bg-color);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+            margin-top: 3rem;
+        }
+
+        .cv-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cv-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .cv-list li::before {
+            content: "‚Ä¢";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* AREE DI INTERVENTO */
+        .areas-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .area-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(59, 122, 101, 0.04);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 122, 101, 0.08);
+        }
+
+        .area-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* TARIFFE */
+        .pricing {
+            background-color: var(--white);
+        }
+
+        .pricing-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .price-card {
+            background-color: var(--bg-color);
+            border: 1px solid rgba(92, 164, 136, 0.2);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .price-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .price-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .price-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(59, 122, 101, 0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-muted);
+            display: none;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* CONTATTI */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #e6f2ec 100%);
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .location-detail {
+            margin-bottom: 1.5rem;
+        }
+
+        .location-detail h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .location-detail span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-form-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(59, 122, 101, 0.06);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #d0e1d9;
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.95rem;
+            background-color: var(--bg-color);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background-color: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--accent);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--text-main);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 968px) {
+            .hero, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .hero {
+                padding-top: 8rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Dott.ssa Antonella Arancio</div>
+            <nav class="nav-links">
+                <a href="#chi-sono">Chi Sono</a>
+                <a href="#aree">Aree di Intervento</a>
+                <a href="#tariffe">Tariffe</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contatti" class="btn-nav">Contattami</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div>
+            <span class="hero-badge">Psicologa e Psicoterapeuta a Tortona</span>
+            <h1>Uno spazio protetto per il tuo benessere emotivo e relazionale</h1>
+            <p>Offro percorsi di supporto psicologico e psicoterapia ad adulti, coppie e famiglie, affrontando disagi individuali, crisi relazionali e difficolt√  emotive con un approccio sistemico-relazionale.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/393715762743?text=Salve%20Dott.ssa%20Arancio,%20vorrei%20ricevere%20informazioni%20per%20un%20colloquio." target="_blank" class="btn-primary">Scrivimi su WhatsApp</a>
+                <a href="tel:+393715762743" class="btn-secondary">Chiama Subito</a>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <img src="profilo.jpg" alt="Dott.ssa Antonella Arancio - Psicologa Psicoterapeuta a Tortona">
+        </div>
+    </section>
+
+    <!-- CHI SONO & STUDIO -->
+    <section id="chi-sono" class="about">
+        <div class="about-grid" style="margin-bottom: 4rem;">
+            <div class="about-text">
+                <h2>Il mio approccio</h2>
+                <p>Sono una psicologa e psicoterapeuta a orientamento <strong>sistemico-relazionale</strong>.Ogni inndividuo non vive isolato, ma sia immerso in una rete di relazioni e contesti che influenzano profondamente il suo benessere psicologico.</p>
+                <p>Nel mio studio a Tortona offro uno spazio sicuro, confidenziale e privo di giudizio, volto a favorire la comprensione profonda delle dinamiche personali e relazionali per attivare un autentico cambiamento.</p>
+            </div>
+            <div class="studio-image-container">
+                <img src="studio.jpg" alt="Studio di Psicologia a Tortona">
+            </div>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="cv-box">
+                <h4>Formazione & Percorso</h4>
+                <ul class="cv-list">
+                    <li><strong>Universit√  degli Studi di Torino:</strong> Laurea in Psicologia Clinica e di Comunit‡.</li>
+                    <li><strong>Scuola di Psicoterapia Mara Selvini Palazzoli:</strong> Specializzazione in Psicoterapia Sistemico-Relazionale.</li>
+                    <li><strong>Specializzazione:</strong> TMI Basic.</li>
+                </ul>
+                <h4 style="margin-top: 1.5rem;">Esperienze e Tirocini</h4>
+                <ul class="cv-list">
+                    <li>Neuropsichiatria Infantile presso ASL AL.</li>
+                    <li>Centro di Salute Mentale presso ASL AL.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- AREE DI INTERVENTO E PATOLOGIE -->
+    <section id="aree">
+        <div class="section-header">
+            <h2>Aree di Intervento e Patologie Trattate</h2>
+            <p>Percorsi mirati e personalizzati per affrontare le diverse sfide della vita emotiva, relazionale e psicologica.</p>
+        </div>
+        <div class="areas-container">
+            <div class="area-card">
+                <h3>Ansia, Umore & Stress</h3>
+                <p>Supporto per superare momenti di blocco, paure invalidanti e carico emotivo eccessivo.</p>
+                <div class="tags-list">
+                    <span class="tag">Ansia</span>
+                    <span class="tag">Disturbo d'Ansia Generalizzato</span>
+                    <span class="tag">Attacchi di panico</span>
+                    <span class="tag">Depressione</span>
+                    <span class="tag">Disturbi dell'umore</span>
+                    <span class="tag">Fobie</span>
+                    <span class="tag">Claustrofobia</span>
+                    <span class="tag">Ansia da prestazione</span>
+                    <span class="tag">Burnout</span>
+                </div>
+            </div>
+            <div class="area-card">
+                <h3>Coppia, Famiglia & Relazioni</h3>
+                <p>Spazi di ascolto e rielaborazione per le dinamiche affettive, genitoriali e relazionali complesse.</p>
+                <div class="tags-list">
+                    <span class="tag">Problemi di coppia</span>
+                    <span class="tag">Crisi di coppia</span>
+                    <span class="tag">Difficolt√  relazionali</span>
+                    <span class="tag">Sostegno alla genitorialit√ </span>
+                    <span class="tag">Terapia familiare</span>
+                </div>
+            </div>
+            <div class="area-card">
+                <h3>Trauma, Lutto & Crescita</h3>
+                <p>Elaborazione di eventi dolorosi, transizioni di vita, identit√  e benessere psicofisico globale.</p>
+                <div class="tags-list">
+                    <span class="tag">Trauma & PTSD</span>
+                    <span class="tag">Lutto e Lutto Perinatale</span>
+                    <span class="tag">Depressione post partum</span>
+                    <span class="tag">Dipendenza affettiva</span>
+                    <span class="tag">Disturbi alimentari (DCA)</span>
+                    <span class="tag">Identit√  sessuale & Genere</span>
+                    <span class="tag">Malattia cronica o terminale</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARIFFE E PRESTAZIONI -->
+    <section id="tariffe" class="pricing">
+        <div class="section-header">
+            <h2>Prestazioni e Tariffe</h2>
+            <p>Trasparenza e professionalit√  per ogni tipologia di percorso terapeutico.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div>
+                    <h3>Colloquio Psicologico & Psicoterapia</h3>
+                    <div class="price-amount">da 70 ‚Ç¨</div>
+                    <p>Colloquio clinico individuale, prima visita, consulenza e percorsi di psicoterapia mirati.</p>
+                </div>
+                <a href="#contatti" class="btn-secondary" style="padding: 0.6rem 1rem; font-size: 0.9rem;">Richiedi info</a>
+            </div>
+            <div class="price-card">
+                <div>
+                    <h3>Sostegno alla Genitorialit√ </h3>
+                    <div class="price-amount">da 80 ‚Ç¨</div>
+                    <p>Percorso dedicato ai genitori per affrontare le sfide educative, evolutive e relazionali con i figli.</p>
+                </div>
+                <a href="#contatti" class="btn-secondary" style="padding: 0.6rem 1rem; font-size: 0.9rem;">Richiedi info</a>
+            </div>
+            <div class="price-card">
+                <div>
+                    <h3>Terapia di Coppia e Familiare</h3>
+                    <div class="price-amount">Su richiesta</div>
+                    <p>Spazi di mediazione e cura relazionale per coppie e nuclei familiari in momenti di crisi.</p>
+                </div>
+                <a href="#contatti" class="btn-secondary" style="padding: 0.6rem 1rem; font-size: 0.9rem;">Contattami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq">
+        <div class="section-header">
+            <h2>Domande Frequenti (FAQ)</h2>
+            <p>Risposte ai dubbi pi√π comuni prima di iniziare un percorso terapeutico.</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Come si svolge il primo colloquio? <span>+</span></div>
+                <div class="faq-answer">Il primo colloquio conoscitivo √® uno spazio di ascolto in cui potrai esporre i motivi che ti hanno spinto a rivolgerti a me. Valuteremo insieme la domanda e la modalit√  di percorso pi√π adatta alle tue esigenze.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Dove si trova lo studio? <span>+</span></div>
+                <div class="faq-answer">Ricevo su appuntamento nello studio privato situato a Tortona (AL), in Corso Leoniero 15 (al primo piano) √à disponibile anche la modalit√  di colloquio online.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Le sedute sono detraibili? <span>+</span></div>
+                <div class="faq-answer">S√¨, le prestazioni sanitarie rese da psicologi e psicoterapeuti sono detraibili come spese mediche nella dichiarazione dei redditi.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATTI E SEDI -->
+    <section id="contatti" class="contact">
+        <div class="contact-grid">
+            <div class="contact-info-box">
+                <h3>Iniziamo il tuo percorso</h3>
+                <p>Contattami per un primo colloquio conoscitivo, in presenza a Tortona, per iniziare insieme questo percorso di comprensione e cambiamento.</p>
+                
+                <div class="location-detail">
+                    <h4>Studio Privato (In presenza)</h4>
+                    <span>Corso Leoniero, 15, Primo piano, Tortona (AL) ‚Äî CAP 15057</span>
+                </div>
+
+                <div class="location-detail">
+                    <h4>Telefono & Email</h4>
+                    <span>Tel: <a href="tel:+393715762743">+39 371 5762743</a><br>Email: <a href="mailto:arancioantonella91@gmail.com">arancioantonella91@gmail.com</a></span>
+                </div>
+
+                <div class="location-detail">
+                    <h4>Modalit√  Online</h4>
+                    <span>Disponibile su appuntamento per colloqui a distanza protetti.</span>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <form name="contatto-studio" method="POST" netlify>
+                    <div class="form-group">
+                        <label for="name">Nome e Cognome</label>
+                        <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tua@email.it" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefono</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Il tuo numero di telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" name="message" placeholder="Scrivi brevemente il motivo del contatto..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Invia Messaggio</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Dott.ssa Antonella Arancio</strong> ‚Äî Psicologa e Psicoterapeuta Sistemico-Relazionale</p>
+        <p>Studio: Corso Leoniero, 15, 15057 Tortona (AL) | Email: arancioantonella91@gmail.com</p>
+        <p style="margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.5;">¬© 2026 Tutti i diritti riservati.</p>
+    </footer>
+
+    <!-- SCRIPT INTERATTIVO PER FAQ -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
